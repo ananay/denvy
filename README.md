@@ -1,2 +1,2 @@
-# nv
-`nv` is a utility to manage environment variables and `.env` files.
+# denvy
+`denvy` is a utility to manage environment variables and `.env` files.

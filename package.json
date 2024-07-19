@@ -1,6 +1,6 @@
 {
   "name": "denvy",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "description": "Manage Environment Variables and .env files",
   "bin": {
     "denvy": "./dist/main.js"

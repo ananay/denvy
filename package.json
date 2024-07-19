@@ -1,10 +1,9 @@
 {
   "name": "denvy",
   "version": "0.0.1",
-  "description": "Manage .env files",
-  "main": "out/denvy",
+  "description": "Manage Environment Variables and .env files",
   "bin": {
-    "denvy": "./out/denvy.js"
+    "denvy": "./dist/main.js"
   },
   "scripts": {
     "build": "npx tsc"

@@ -10,7 +10,7 @@ const main = async () => {
         .name("denvy")
         .description("Manage environment variables and .env files")
         .usage("[command] [options]")
-        .version("0.0.1-alpha")
+        .version("0.0.1-alpha.1")
 
     program
         .command('sample')

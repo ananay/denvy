@@ -1,26 +1,24 @@
 {
-    "name": "denvy",
-    "version": "0.0.1",
-    "description": "Manage .env files",
-    "main": "out/denvy",
-    "module": "main.ts",
-    "type": "module",
-    "scripts": {
-      "dev": "bun run main.ts",
-      "b": "bun build --compile --minify ./main.ts --outfile out/denvy"
-    },
-    "bin": {
-        "denvy": "out/denvy"
-    },
-    "devDependencies": {
-      "@types/bun": "latest"
-    },
-    "peerDependencies": {
-      "typescript": "^5.0.0"
-    },
-    "dependencies": {
-      "chalk": "^5.3.0",
-      "commander": "^12.1.0",
-      "figlet": "^1.7.0"
-    }
+  "name": "denvy",
+  "version": "0.0.1",
+  "description": "Manage .env files",
+  "main": "out/denvy",
+  "bin": {
+    "denvy": "./out/denvy.js"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/figlet": "^1.5.8",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "figlet": "^1.7.0"
   }
+}

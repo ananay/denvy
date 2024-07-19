@@ -21,9 +21,7 @@ export const findEnvFiles = () => {
  * @param envFile {string} The name of the .env file
  */
 export const readEnvFile = async (envFile: string) => {
-    // Read the .env file
-    const envFileRef = Bun.file(envFile);
-    const fileContent = await envFileRef.text();
+    const fileContent = fs.readFileSync(envFile, 'utf-8');
     return fileContent;
 }
 

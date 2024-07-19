@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import { program } from "commander";
 import { generateSample, generateTypes, validateEnv } from "./util/actions";
 import figlet from "figlet";

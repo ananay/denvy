@@ -20,6 +20,7 @@ export const getVars = (fileContent: string) => {
     const keyValuePairs = vars.map((line) => line.split("="));
 
     // Create a map of key-value pairs
+    // @ts-ignore
     const envMap = new Map(keyValuePairs);
 
     return envMap;

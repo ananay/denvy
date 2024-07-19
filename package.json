@@ -7,7 +7,10 @@
     "type": "module",
     "scripts": {
       "dev": "bun run main.ts",
-      "bnr": "bun build --compile --minify ./main.ts --outfile out/denvy"
+      "b": "bun build --compile --minify ./main.ts --outfile out/denvy"
+    },
+    "bin": {
+        "denvy": "out/denvy"
     },
     "devDependencies": {
       "@types/bun": "latest"

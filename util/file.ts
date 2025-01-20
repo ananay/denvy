@@ -17,6 +17,21 @@ export const findEnvFiles = () => {
 }
 
 /**
+ * Finds the .env.sample file in the current directory
+ * @returns 
+ */
+export const findSampleEnvFile = () => {
+    const files = fs.readdirSync(".");
+
+    // Filter out files that don't end with .env
+    const sampleEnvFile = files.find((file) => file == ".env.sample");
+
+    // Return the filtered list of files
+    return sampleEnvFile;
+}
+
+
+/**
  * Read the given .env file and return its content
  * @param envFile {string} The name of the .env file
  */

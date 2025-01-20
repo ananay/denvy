@@ -1,7 +1,12 @@
 {
   "name": "denvy",
-  "version": "0.0.1-alpha.1",
-  "description": "Manage Environment Variables and .env files",
+  "version": "0.0.1-alpha.5",
+  "author": {
+    "name": "Ananay Arora",
+    "email": "i@ananayarora.com",
+    "url": "https://ananay.co"
+  },
+  "description": "Manage .env files, generate .env.sample and .env types",
   "bin": {
     "denvy": "./dist/main.js"
   },

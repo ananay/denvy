@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
 import { program } from "commander";
-import { generateSample, generateTypes, validateEnv } from "./util/actions";
 import figlet from "figlet";
+import { generateSample, generateTypesAndCheckRequired, validateEnv } from "./util/actions";
 
 const main = async () => {
 
@@ -10,7 +10,7 @@ const main = async () => {
         .name("denvy")
         .description("Manage environment variables and .env files")
         .usage("[command] [options]")
-        .version("0.0.1-alpha.1")
+        .version("0.0.1-alpha.5")
 
     program
         .command('sample')
@@ -18,12 +18,22 @@ const main = async () => {
         .description('Generates a sample .env file based on the current .env file')
         .action(generateSample);
 
-
     program
         .command('types')
         .alias('t')
-        .description('Generates the typescript types for the current .env file')
-        .action(generateTypes);
+        .description('Generates typescript types and usage check function for the current .env file')
+        .action(() => {
+            generateTypesAndCheckRequired();
+        });
+
+    program
+        .command('sample-types')
+        .alias('st')
+        .description('Generates .env.sample, typescript types and usage check function for the current .env file')
+        .action(async () => {
+            await generateSample();
+            await generateTypesAndCheckRequired();
+        });
 
     program
         .command('validate')

@@ -105,13 +105,35 @@ export const validateEnvFile = (fileContent: string, ignoreErrors: boolean = fal
     }
 }
 
+export const generateCheckFunctionFromEnvFile = (fileContent: string) => {
+    const vars = getVars(fileContent);
+    // const keys = Array.from(vars.);
+    const keys = Array.from(vars.keys())
+
+    const checkFunction = `
+export const checkRequiredEnvVars = () => {
+    const required_vars: string[] = [
+        ${keys.map((key) => `"${key}"`).join(",")}
+    ]
+    required_vars.forEach((key: string) => {
+        if (!process.env[key]) {
+            throw new Error(\`Required env var \${key} is not set.\`);
+        }
+    });
+}
+`;
+    return checkFunction;
+};
+
 export const generateTypesFromEnvFile = (fileContent: string) => {
     const vars = getVars(fileContent);
     const keys = Array.from(vars.keys());
 
     const typeDef = `export type EnvVars = {
-        ${keys.map((key) => `${key}: string;`).join("\n\t")}
-    }`;
+    ${keys.map((key) => `${key}: string;`).join("\n\t")}
+}
+const env = process.env as EnvVars;
+export default env;`;
     return typeDef;
 
 }
